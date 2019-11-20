@@ -1,10 +1,13 @@
 <template>
-  <div class="dash-parent" :class="[isActive? 'active':'']" @mouseover="showDash" @mouseleave="hideDash"
+  <!--<div class="dash-parent" :class="[isActive? 'active':'']" @mouseover="showDash" @mouseleave="hideDash"-->
+  <div class="dash-parent" :class="[isActive? 'active':'']"
        v-if="isModuleShow">
-    <span class="dash-icon icon-edit" v-if="isActive" :style="{'background-color':editBgColor}"
-          @click="showEditDialog"></span>
-    <span class="dash-icon icon-add" v-if="isActive" :style="{'background-color':addBgColor}" @click="childAdd"></span>
-    <span class="dash-icon icon-delete" v-if="isActive" @click="childDelete"></span>
+    <div class="dash-box">
+        <span class="dash-icon icon-edit" v-if="isActive" :style="{'background-color':editBgColor}"
+          @click="showEditDialog">编辑</span>
+        <span class="dash-icon icon-add" v-if="isActive" :style="{'background-color':addBgColor}" @click="childAdd">添加</span> 
+        <span class="dash-icon icon-delete" v-if="isActive" :style="{'background-color':delBgColor}" @click="childDelete">删除</span>
+    </div>     
     <slot></slot>
   </div>
 </template>
@@ -15,16 +18,20 @@
     props: {
       editBgColor: {
         type: String,
-        default: '#666'
+        default: '#d9420d'
       },
       addBgColor: {
         type: String,
-        default: '#666'
+        default: '#d9420d'
+      },
+      delBgColor: {
+        type: String,
+        default: '#d9420d'
       }
     },
     data() {
       return {
-        isActive: false,
+        isActive: true,
         isModuleShow: true
       };
     },
@@ -99,35 +106,35 @@
     
   .dash-parent{
     position: relative;
-    text-align: left;
     cursor: pointer;
     border: 1px dashed transparent;
     padding: 24px 0 10px;
     margin: 0 20px;
-    .dash-icon{
-      float: right;
-      margin-top: -24px;
-      width: 24px;
-      height: 24px;
-      &:hover{
-        background-color: #2bd8ae;
-      }
-      .icon-edit{
-        background: #00c091 url(../../../static/image/toolbar.png) no-repeat 0 0;
-        background-position: -210px 2px;
-      }
-      .icon-add{
-        background: #00c091 url(../../../static/image/toolbar.png) no-repeat 0 0;
-        background-position: -125px 3px;
-        margin-right: 30px;
-      }
-      .icon-delete{
-        background: #00c091 url(../../../static/image/toolbar.png) no-repeat 0 0;
-        background-position: -154px 3px;
-        margin-right: 60px;
-      }
+    .dash-box{
+        position:absolute;
+        right:0;
+        top:0;
+        z-index:10;
+        width:150px;
+        height:24px;
+        .dash-icon{
+          display:inline-block;
+          float:left;
+          width: 50px;
+          height: 24px;
+          color:#5b5e05;
+          &:hover{
+            background-color: #2bd8ae;
+          }
+          .icon-edit{
+          }
+          .icon-add{
+            
+          }
+          .icon-delete{
+            
+          }
+        }
     }
-  }
-    
-    
+}
 </style>

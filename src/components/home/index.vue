@@ -1,17 +1,23 @@
 <template>
   <div ref="asideLeftHook">
-     <dash-parent v-if="isDash == true">
+     <fun-hd></fun-hd>
+     <dash-parent :editBgColor="'#00c091'" :addBgColor="'#0bedf0'">
         <hd :swidth="swidth" :sheight="sheight" :backgroundStyle="backgroundStyle"></hd>
      </dash-parent> 
-     <dash-parent v-if="isDash == true">  
+     <dash-parent :editBgColor="'#00c091'" :addBgColor="'#0bedf0'">  
         <d-banner></d-banner>
-     </dash-parent v-if="isDash == true">
-     <dash-parent v-if="isDash == true" @eventShowDialog="ShowDialogListener" :editBgColor="'#00c091'">
+     </dash-parent>
+     <dash-parent @eventShowDialog="ShowFormDialog" :editBgColor="'#00c091'" :addBgColor="'#0bedf0'">
         <d-item></d-item>
      </dash-parent> 
-     <div style="width: 1200px; margin: 0 aut;">
-      <button type="button" class="layui-btn layui-btn-lg layui-btn-normal" @click="">保存</button>
-      <button type="button" class="layui-btn layui-btn-lg layui-btn-normal">取消</button>
+     <!--编辑表单信息的弹窗-->
+    <base-dialog v-show="false" id="idBaseDialog"
+                 @dialogEventSave="dialogSaveForm"
+                 @dialogEventCancel="dialogCancelForm">
+    </base-dialog>
+    <div class="dialog-btns">
+      <button class="dialog-btn dialog-save" @click="saveFn">保存</button>
+      <button class="dialog-btn dialog-cancel" @click="cancelFn">取消</button>
     </div>
   </div>
 </template>
@@ -19,14 +25,18 @@
 <script>
 import dashParent from '../dashParent/dashParent.vue';
 import hd from '../hd/hd.vue';
+import funHd from '../funhd/funhd.vue';
 import dBanner from '../banner/banner.vue';
 import dItem from '../item/item.vue';
+import baseDialog from '../baseDialog/baseDialog.vue';
 export default {
   components: {
     dashParent,
     hd,
     dBanner,
-    dItem
+    dItem,
+    baseDialog,
+    funHd
   },
   name: 'index',
   data () {
@@ -43,7 +53,35 @@ export default {
     
   },
   methods: {
-
+    // 打开编辑表单信息框
+    ShowFormDialog() {
+      this.dialogIndex = this.$layer.open({
+          type: 1,
+          shadeClose: true,
+          title: '编辑表单信息',
+          skin: 'layui-layer-molv',
+          area: ['740px', '400px'],
+          content: this.$jquery('#idBaseDialog')
+        }
+      );
+    },
+    // 表单信息编辑保存
+    dialogSaveForm(userInfo) {
+     
+      this.$layer.close(this.dialogIndex);
+    },
+    // 表单信息编辑取消
+    dialogCancelForm() {
+      this.$layer.close(this.dialogIndex);
+    },
+    //保存
+    saveFn(){
+        
+    },
+    //撤销
+    cancelFn(){
+        
+    }
   }
 }
 </script>

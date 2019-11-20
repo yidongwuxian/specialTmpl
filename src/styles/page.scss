@@ -1,3 +1,94 @@
 .mtNegative{
     margin-top:-1px;
 }
+.dialog-btns{
+    margin-top: 15px;
+    text-align: center;
+    .dialog-btn{
+        border: none;
+        outline: none;
+        border-radius: 8px;
+        width: 100px;
+        height: 40px;
+        margin: 0 15px;
+        cursor: pointer;
+    }
+    .dialog-save{
+        color: #fff;
+        background-color: #009f95;
+        &:hover{
+            background-color: #11c4b9;
+        }
+    }
+    .dialog-cancel{
+        background-color: #ccc;
+        &:hover{
+            background-color: #ddd;
+        }
+    }
+}
+
+//input 宽度
+.input-width {
+    width: 222px;
+  }
+  .input-width5{
+    width:500px;
+  }
+  .input-width6{
+    width:800px;
+  }
+  //textarea 宽度
+  .tx_area{
+    width:800px;
+  }
+  //
+  .ml1zero{
+    margin-left:1%;
+  }
+  //margin
+  .mt1em{
+    margin: 1.3em  0 0!important;
+  }
+  .ml10{
+    margin-left:10px;
+  }
+  .mt15{
+    margin-top: 15px;
+  }
+  .mt20{
+    margin:20px 0;
+  }
+  .mb10{
+    margin-bottom:10px;
+  }
+  .mb20{
+    margin-bottom:20px;
+  }
+  //位置
+  .m_auto{ 
+    margin: 0 auto;
+  }
+  .m_tx{
+    margin: 0 auto;
+    text-align: center;
+  }
+  //文本
+  .tx{
+    text-align:center;
+  }
+  .tl{
+    text-align:left;
+  }
+  .tr{
+    text-align:right;
+  }
+  // btn 位置
+  .btn_m20{
+    margin: 0 0 20px;
+  }
+  //自适应width
+  .auto100{
+    width:100%;
+    clear:both;
+  }
