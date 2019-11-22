@@ -1,11 +1,20 @@
 <template>
   <div id="app">
-    <router-view/>
+    <fun-hd></fun-hd>
+    <div>
+      <keep-alive>
+        <router-view/>
+      </keep-alive>
+    </div>
   </div>
 </template>
 
 <script>
+import funHd from '@/components/funhd/funhd.vue';
 export default {
+  components: {
+    funHd
+  },
   name: 'App'
 }
 </script>

@@ -1,91 +1,74 @@
 <template>
   <div ref="asideLeftHook">
-     <fun-hd></fun-hd>
-     <dash-parent :editBgColor="'#00c091'" :addBgColor="'#0bedf0'">
-        <hd :swidth="swidth" :sheight="sheight" :backgroundStyle="backgroundStyle"></hd>
-     </dash-parent> 
-     <dash-parent :editBgColor="'#00c091'" :addBgColor="'#0bedf0'">  
-        <d-banner></d-banner>
-     </dash-parent>
-     <dash-parent @eventShowDialog="ShowFormDialog" :editBgColor="'#00c091'" :addBgColor="'#0bedf0'">
-        <d-item></d-item>
-     </dash-parent> 
-     <!--编辑表单信息的弹窗-->
-    <base-dialog v-show="false" id="idBaseDialog"
-                 @dialogEventSave="dialogSaveForm"
-                 @dialogEventCancel="dialogCancelForm">
-    </base-dialog>
-    <div class="dialog-btns">
-      <button class="dialog-btn dialog-save" @click="saveFn">保存</button>
-      <button class="dialog-btn dialog-cancel" @click="cancelFn">取消</button>
-    </div>
+     <!-- 主体 start -->
+     <div class="main">
+        <!--版心 start -->
+        <div class="d_layout">
+            <!--组件 start -->
+            <d-font v-if="isFontShow == true"></d-font>
+            <!--组件 end -->
+        </div>
+        <!--版心 end -->
+     </div>
+     <!--组件编辑区 start -->
+        <d-attribute v-if="isAttribute == true"></d-attribute>
+        <!--组件编辑区 end -->
+     <!-- 主体 end -->
   </div>
 </template>
 
 <script>
-import dashParent from '../dashParent/dashParent.vue';
-import hd from '../hd/hd.vue';
-import funHd from '../funhd/funhd.vue';
-import dBanner from '../banner/banner.vue';
-import dItem from '../item/item.vue';
-import baseDialog from '../baseDialog/baseDialog.vue';
+//组件
+//属性
+import dFont from '../font/font.vue';
+import dAttribute from '../attribute/attribute.vue';
+
 export default {
   components: {
-    dashParent,
-    hd,
-    dBanner,
-    dItem,
-    baseDialog,
-    funHd
+    dFont,
+    dAttribute
   },
   name: 'index',
   data () {
     return {
-      isDash: true,
-      swidth: '100%',
-      sheight: '40px',
-      backgroundStyle: '#d50000'
+      //默认样式
+      //组件样式
+      isFontShow: false,
+      //属性选择区是否显示
+      isAttribute: false,
     }
   },
   // 生命周期函数
   created: function () {
     // 接收到保存的信息
-    
+    this.$hub.$on('funSel', (id) => {
+      if(id == 1){
+        this.isFontShow = true;
+      }
+      //显示组件编辑区
+      this.isAttribute = true;
+    })
   },
   methods: {
-    // 打开编辑表单信息框
-    ShowFormDialog() {
-      this.dialogIndex = this.$layer.open({
-          type: 1,
-          shadeClose: true,
-          title: '编辑表单信息',
-          skin: 'layui-layer-molv',
-          area: ['740px', '400px'],
-          content: this.$jquery('#idBaseDialog')
-        }
-      );
-    },
-    // 表单信息编辑保存
-    dialogSaveForm(userInfo) {
-     
-      this.$layer.close(this.dialogIndex);
-    },
-    // 表单信息编辑取消
-    dialogCancelForm() {
-      this.$layer.close(this.dialogIndex);
-    },
-    //保存
-    saveFn(){
-        
-    },
-    //撤销
-    cancelFn(){
-        
-    }
+    
   }
 }
 </script>
 <style lang="scss">
 @import '../../styles/reset.scss';
 @import '../../styles/page.scss';
+.main{
+  position:relative;
+  width:1920px;
+  height:1080px;
+  background:#fff;
+  margin:0 auto;
+  .d_layout{
+    position:relative;
+    width:1200px;
+    height:1080px;
+    background:#ccc;
+    margin:0 auto;
+  }
+}
 </style>

@@ -5,14 +5,13 @@ import App from './App'
 import router from './router'
 
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-import locale from 'element-ui/lib/locale/lang/zh-CN' // lang i18n
+import '../node_modules/element-ui/lib/theme-chalk/index.css'
+import locale from '../node_modules/element-ui/lib/locale/lang/zh-CN' // lang i18n
 Vue.use(ElementUI, { locale })
 /* 引入这些内容为了弹框的使用 */
 
 import jquery from '../static/jquery.js';
 import layer from "layui-layer";
-//import layer from '../static/layer/layer.js';
 
 Vue.config.productionTip = false;
 Vue.prototype.$layer = layer;
