@@ -11,7 +11,7 @@
         <!--版心 end -->
      </div>
      <!--组件编辑区 start -->
-        <d-attribute v-if="isAttribute == true"></d-attribute>
+        <!--<d-attribute v-if="isAttribute == true"></d-attribute>-->
         <!--组件编辑区 end -->
      <!-- 主体 end -->
   </div>
@@ -21,12 +21,12 @@
 //组件
 //属性
 import dFont from '../font/font.vue';
-import dAttribute from '../attribute/attribute.vue';
+//import dAttribute from '../attribute/attribute.vue';
 
 export default {
   components: {
     dFont,
-    dAttribute
+    //dAttribute
   },
   name: 'index',
   data () {
@@ -46,7 +46,7 @@ export default {
         this.isFontShow = true;
       }
       //显示组件编辑区
-      this.isAttribute = true;
+      //this.isAttribute = true;
     })
   },
   methods: {
