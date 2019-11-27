@@ -19,6 +19,7 @@ export default {
   data () {
     return {
       fontNum: 1,
+      posLeftNum: 10,
       funArr:[
         {
           'id': '1',
@@ -47,9 +48,12 @@ export default {
     clickMenu(id){
       switch(id){
         case '1':
-          let num = this.fontNum++;
+          let numObj = {
+            num: this.fontNum++,
+            posLeft: this.posLeftNum + 10
+          };
           this.$hub.$emit('funSel', id);
-          this.$hub.$emit('fontNum', num);
+          this.$hub.$emit('fontNum', numObj);
           break;
         case '2':
           this.$hub.$emit('funSel', id);

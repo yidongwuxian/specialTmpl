@@ -51,8 +51,8 @@ export default {
     }
   },
   created: function () {
-    this.$hub.$on('fontNum', (num) => {
-      this.form.num = num;
+    this.$hub.$on('fontNum', (numObj) => {
+      this.form.num = numObj.num;
       this.$hub.$emit('fontFn', this.form);
     })
   },

@@ -1,31 +1,31 @@
 <template>
   <div> 
-    <div v-for="(item,index) in fontNameArr" :key="index">
+    <div v-for="(item,index) in fontNameArr" :key="index" :ref="item.id"  @click="clickFontDiv(index)">
       <!--文字内容 start-->
-      <div :class="item.isClick? 'current_sty font_style' : 'font_style'" @click="clickFontDiv(item)">
-          <vue-drag-resize 
-              :w="vw" 
-              :h="vh" 
-              :minw="minw"
-              :minh="minh"
-              :left="item.position.left"
-              :top="item.position.left"
-              :z="item.position.zIndex" 
-              :resizing="resize" 
-              :dragging="resize" 
-              :isActive = 'true'
-              >
-              <p :style="{
-                'font-family':item.style.font, 
-                'text-align':item.style.align
-                }"
-              >{{item.style.text}}</p>
-          </vue-drag-resize>
-      </div>
+      <vue-drag-resize 
+          :w="vw" 
+          :h="vh" 
+          :minw="minw"
+          :minh="minh"
+          :left="item.position.left"
+          :top="item.position.top"
+          :z="item.position.zIndex" 
+          style="position:absolute;"
+          :isActive = 'true'
+          >
+          <p 
+           :class="{current_sty:index+1==arrNum}" 
+           :style="{
+            'font-family':item.style.font, 
+            'text-align':item.style.align,
+            //'color': arrNum === index+1 ? '#ff0000' : ''
+            }"
+          ><span>{{item.style.text}}{{arrNum}}</span></p>
+      </vue-drag-resize>
       <!--文字内容 end-->
       <!--文字样式 start-->
       <div class="attr-box"> 
-        <div class="font-box">
+        <div class="font-box" v-if="arrNum === index+1">
             <el-form ref="form" :model="item.style" label-width="80px">
               <el-form-item label="文字样式" class="attr_tt"></el-form-item>
               <el-form-item label="字体：" class="mb15">
@@ -74,8 +74,10 @@ export default {
       vw: 200,
 　　　 vh: 50,
       initPos: 20,
+      arrNum: 1,
       fontNameArr: [{
         isClick: false,
+        id: 'zBoy1',
         position:{
           top: 20,
 　　　    left:20,
@@ -97,9 +99,11 @@ export default {
     this.initPos+= this.initPos + 15; 
     // this.left = this.left + this.initPos;
     // this.top  = this.top  + this.initPos;
+    
     // 接收到保存的信息
-    this.$hub.$on('fontNum', (num) => {
-        console.log('f:'+JSON.stringify(this.fontNameArr[0] ) );
+    this.$hub.$on('fontNum', (numObj) => {
+        this.arrNum = numObj.num;
+        console.log('num1:'+JSON.stringify(this.arrNum ) );
         //  let ztop = this.fontNameArr[num].position.top + this.initPos;
         //  let zleft = this.fontNameArr[num].position.left + this.initPos;
         //  console.log('ztop:'+JSON.stringify(ztop) );
@@ -107,10 +111,11 @@ export default {
           
             let fontObj = {
               isClick: false,
+              id: 'zBoy'+numObj.num,
               position:{
-                top:    ztop,
-      　　　     left:  zleft,
-                zIndex: num
+                top:    this.vh + numObj.posLeft,
+      　　　     left:  20,
+                zIndex: this.arrNum
               }, 
               style:{
                   font: '',
@@ -138,24 +143,10 @@ export default {
 
   },
   methods: {
-    //缩小
-    resize(newRect) {
-      this.vw = newRect.width;
-      this.vh = newRect.height;
-      this.top = newRect.top;
-      this.left = newRect.left;
-    },
     //点击选项
-    clickFontDiv(item){
-      //this.clearData();
-      item.isClick = true;
-      console.log('item:'+JSON.stringify(item) );
+    clickFontDiv(index){
+      this.arrNum = index + 1;
     },
-    clearData(){
-        this.fontNameArr.forEach((item) => {
-            item.isClick = false;  
-        });
-    }
   }
 }
 </script>
@@ -167,15 +158,7 @@ export default {
   top:30px;
 }
 .current_sty{
-    font-family:'思源黑体 CN Medium'; 
-    text-align: center;
-    min-width:200px; 
-    min-height:20px; 
-    width: 200px; 
-    height:30px;
-    left: 40px;
-    top: 80px; 
-    z-index: 10; 
+    border:1px dashed #ff0000;
 }
 .attr_tt{
   margin-bottom:15px;
