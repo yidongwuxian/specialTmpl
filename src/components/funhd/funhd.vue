@@ -40,6 +40,10 @@ export default {
         {
           'id': '5',
           'name':'弹窗'
+        },
+        {
+          'id': '6',
+          'name':'轮播图'
         }
       ]
     }
@@ -65,6 +69,9 @@ export default {
           this.$hub.$emit('funSel', id);
         break;
         case '5':
+          this.$hub.$emit('funSel', id);
+        break;
+        case '6':
           this.$hub.$emit('funSel', id);
         break;
         default:

@@ -25,10 +25,9 @@ export default {
           pic: 'banner_item1.jpg'
         }
       ]
-    }
+    } 
   }
 }
 </script>
 <style lang="scss" scoped>
-
 </style>

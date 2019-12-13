@@ -97,50 +97,30 @@ export default {
   },
   created: function () {
     this.initPos+= this.initPos + 15; 
-    // this.left = this.left + this.initPos;
-    // this.top  = this.top  + this.initPos;
-    
     // 接收到保存的信息
     this.$hub.$on('fontNum', (numObj) => {
         this.arrNum = numObj.num;
-        console.log('num1:'+JSON.stringify(this.arrNum ) );
-        //  let ztop = this.fontNameArr[num].position.top + this.initPos;
-        //  let zleft = this.fontNameArr[num].position.left + this.initPos;
-        //  console.log('ztop:'+JSON.stringify(ztop) );
-        //  console.log('zleft:'+JSON.stringify(zleft) );
-          
-            let fontObj = {
-              isClick: false,
-              id: 'zBoy'+numObj.num,
-              position:{
-                top:    this.vh + numObj.posLeft,
-      　　　     left:  20,
-                zIndex: this.arrNum
-              }, 
-              style:{
-                  font: '',
-                  align: '',
-                  text: '输入文字'
-              }
-            };
-            this.fontNameArr.push(fontObj);
-          
+        let fontObj = {
+          isClick: false,
+          id: 'zBoy'+numObj.num,
+          position:{
+            top:    this.vh + numObj.posLeft,
+  　　　     left:  20,
+            zIndex: this.arrNum
+          }, 
+          style:{
+              font: '',
+              align: '',
+              text: '输入文字'
+          }
+        };
+        this.fontNameArr.push(fontObj);   
     })
   },
   mounted() {
     this.initPos+= this.initPos + 5; 
     this.left = this.left + this.initPos;
     this.top  = this.top  + this.initPos;
-    //字体文件
-    // this.$hub.$on('fontFn', (data) => {
-    //    if(data.font){
-    //         this.fontNameArr[i].style.fontFamily = data.font;
-    //    }
-    //    if(data.align){
-    //         this.fontNameArr[i].style.textAlign = data.align;
-    //    }  
-    // })
-
   },
   methods: {
     //点击选项

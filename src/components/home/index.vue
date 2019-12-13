@@ -5,13 +5,15 @@
         <!--版心 start -->
         <div class="d_layout">
             <!--组件 start -->
-            <d-font v-if="isFontShow == true"></d-font>
+            <d-font v-if="hConfig.isFontShow == true"></d-font>
+            <d-banner v-if="hConfig.isBannerShow == true"></d-banner>
+            <d-swiper v-if="hConfig.isSwiperShow == true"></d-swiper>
             <!--组件 end -->
         </div>
         <!--版心 end -->
      </div>
      <!--组件编辑区 start -->
-        <!--<d-attribute v-if="isAttribute == true"></d-attribute>-->
+        <d-attribute v-if="isAttribute == true" :hConfig="hConfig"></d-attribute>
         <!--组件编辑区 end -->
      <!-- 主体 end -->
   </div>
@@ -20,20 +22,28 @@
 <script>
 //组件
 //属性
-import dFont from '../font/font.vue';
-//import dAttribute from '../attribute/attribute.vue';
+import dFont from '@/components/font/font.vue';
+import dBanner from '@/components/banner/banner.vue';
+import dSwiper from '@/components/swiper/index.vue';
+import dAttribute from '@/components/attribute/index.vue';
 
 export default {
   components: {
     dFont,
-    //dAttribute
+    dBanner,
+    dSwiper,
+    dAttribute
   },
   name: 'index',
   data () {
     return {
       //默认样式
       //组件样式
-      isFontShow: false,
+      hConfig: {
+        isFontShow: false,
+        isBannerShow: false,
+        isSwiperShow: false
+      },
       //属性选择区是否显示
       isAttribute: false,
     }
@@ -43,10 +53,16 @@ export default {
     // 接收到保存的信息
     this.$hub.$on('funSel', (id) => {
       if(id == 1){
-        this.isFontShow = true;
+        this.hConfig.isFontShow = true;
       }
-      //显示组件编辑区
-      //this.isAttribute = true;
+      if(id == 2){
+        this.hConfig.isBannerShow = true;
+      }
+      if(id == 6){
+        this.hConfig.isSwiperShow = true;
+      }
+      //显示属性编辑区
+      this.isAttribute = true;
     })
   },
   methods: {

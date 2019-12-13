@@ -5,8 +5,8 @@ import App from './App'
 import router from './router'
 
 import ElementUI from 'element-ui'
-import '../node_modules/element-ui/lib/theme-chalk/index.css'
-import locale from '../node_modules/element-ui/lib/locale/lang/zh-CN' // lang i18n
+import 'element-ui/lib/theme-chalk/index.css'
+import locale from 'element-ui/lib/locale/lang/zh-CN' // lang i18n
 Vue.use(ElementUI, { locale })
 /* 引入这些内容为了弹框的使用 */
 
@@ -18,15 +18,11 @@ Vue.prototype.$layer = layer;
 Vue.prototype.$jquery = jquery;
 // 不同组件之间的通信
 Vue.prototype.$hub = new Vue();
-
-import VueAwesomeSwiper from 'vue-awesome-swiper'
-import '../node_modules/swiper/dist/css/swiper.css'
-Vue.use(VueAwesomeSwiper)
-
+// 懒加载
 import VueLazyload from 'vue-lazyload'
 Vue.use(VueLazyload)
 
-//vue拖拽组件
+// vue拖拽组件
 import VueDragResize from 'vue-drag-resize'
 Vue.component('vue-drag-resize', VueDragResize)
 
