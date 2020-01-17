@@ -53,9 +53,6 @@
   .ml10{
     margin-left:10px;
   }
-  .mt10{
-    margin:10px 0;
-  }
   .mt15{
     margin-top: 15px;
   }
@@ -64,9 +61,6 @@
   }
   .mb10{
     margin-bottom:10px;
-  }
-  .mb15{
-    margin-bottom: 15px;
   }
   .mb20{
     margin-bottom:20px;
@@ -97,18 +91,4 @@
   .auto100{
     width:100%;
     clear:both;
-  }
-
-  .main p{
-    margin: 0.5rem 0;
-  }
-  //属性选择区
-  .attr-box{
-    position: fixed;
-    top:48px;
-    right:0;
-    z-index: 5;
-    width:330px;
-    height: auto;
-    background-color:#0a4a5a;
   }
