@@ -16,7 +16,9 @@ import {
   Loading,
   MessageBox,
   Message,
-  Backtop
+  Backtop,
+  Collapse,
+  CollapseItem
 } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/zh-CN' // lang i18n
@@ -52,6 +54,8 @@ XPE.install = function (Vue) {
   Vue.component(prefix + 'MessageBox', MessageBox)
   Vue.component(prefix + 'Message', Message)
   Vue.component(prefix + 'Backtop', Backtop)
+  Vue.component(prefix + 'Collapse', Collapse)
+  Vue.component(prefix + 'CollapseItem', CollapseItem)
   // 注册XPageEditor
   Vue.component('XPageEditor', XPageEditor)
   // 注册VueAwesomeSwiper

@@ -11,7 +11,7 @@
 </style>
 
 <template>
-  <XUIModal
+  <XUIDialog
     class="xpe_nest-notice-modal"
     :value="isShow"
     title="提示"
@@ -22,7 +22,7 @@
     <div slot="footer">
       <Button type="text" size="large" @click="handleCancel">关闭</Button>
     </div>
-  </XUIModal>
+  </XUIDialog>
 </template>
 
 <script>

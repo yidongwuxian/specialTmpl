@@ -79,10 +79,10 @@
           :placement="toolTip.placement[config.position]"
           :content="item.toolTip.content"
         >
-          <XPEIcon :type="item.icon" :title="item.text"></XPEIcon>
+          <XUIIcon :type="item.icon" :title="item.text"></XUIIcon>
         </XUITooltip>
-        <XPEIcon v-else :type="item.icon" :title="item.text"></XPEIcon>
-      </div>
+        <XUIIcon v-else :type="item.icon" :title="item.text"></XUIIcon>
+      </div> 
     </div>
   </div>
 </template>

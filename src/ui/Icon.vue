@@ -1,5 +1,4 @@
 /**
-* Created by OXOYO on 2018/4/2.
 *
 * 图标组件
 */
@@ -14,7 +13,7 @@
 
 <script>
 export default {
-  name: 'XPEIcon',
+  name: 'XUIIcon',
   props: {
     type: {
       type: String,
@@ -25,7 +24,7 @@ export default {
     return {
       className: {
         main: 'iconfont',
-        prefix: 'icon-'
+        prefix: 'el-icon-'
       }
     }
   },

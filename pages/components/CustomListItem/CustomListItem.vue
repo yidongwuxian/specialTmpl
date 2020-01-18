@@ -84,7 +84,7 @@
 
 <script>
   import navigate from '../../resources/config/navigate'
-
+  import Icon from '@/ui/Icon.vue'
   export default {
     name: 'CustomListItem',
     data () {
@@ -92,6 +92,9 @@
         navigate,
         lang: this.$lang
       }
+    },
+    components:{
+      Icon
     },
     methods: {
       handleDragStart: function (component, event) {

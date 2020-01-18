@@ -11,7 +11,7 @@
 </style>
 
 <template>
-  <XUIModal
+  <XUIDialog
     class="xpe_add-project-modal"
     :value="isShow"
     title="新建项目"
@@ -55,7 +55,7 @@
       <Button type="text" size="large" @click="handleCancel">取消</Button>
       <Button type="primary" size="large" @click="handleOK">确定</Button>
     </div>
-  </XUIModal>
+  </XUIDialog>
 </template>
 
 <script>

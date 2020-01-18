@@ -74,7 +74,7 @@
         <Icon type="close"></Icon>
       </div>
     </div>
-    <XUIModal
+    <XUIDialog
       class="xpe_add-project-modal"
       :value="isShow"
       title="提示"
@@ -89,13 +89,13 @@
         <Button type="text" size="large" @click="handleCancel">取消</Button>
         <Button type="primary" size="large" @click="handleOK">确定</Button>
       </div>
-    </XUIModal>
+    </XUIDialog>
   </div>
 </template>
 
 <script>
 import utils from '@/global/utils'
-
+import Icon from '@/ui/Icon.vue'
 export default {
   name: 'XPETabList',
   data () {
@@ -108,6 +108,9 @@ export default {
       // 是否显示弹窗
       isShow: false
     }
+  },
+  components:{
+    Icon
   },
   methods: {
     handleClose: function (item) {

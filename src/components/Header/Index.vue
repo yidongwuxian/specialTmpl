@@ -95,7 +95,7 @@
     <div class="block_body">
       <!-- tab -->
       <div class="tab-group">
-        <XPETabList></XPETabList>
+        <XUITabList></XUITabList>
       </div>
       <div class="btn-group">
         <!-- TODO 上传UI效果图，进行UI图与界面的比对 -->
@@ -106,7 +106,7 @@
           @mousedown.stop.prevent
           @click.native.stop.prevent="handleAction('addProject')"
         >
-          <XPEIcon type="add-circle" title="新建项目"></XPEIcon>
+          <XUIIcon type="add-circle" title="新建项目"></XUIIcon>
         </XUIButton>
         <XUIButton
           type="text"
@@ -115,7 +115,7 @@
           @mousedown.stop.prevent
           @click.native.stop.prevent="handleAction('ui')"
         >
-          <XPEIcon type="ui" title="UI"></XPEIcon>
+          <XUIIcon type="ui" title="UI"></XUIIcon>
         </XUIButton>
         <XUIButton
           type="text"
@@ -124,7 +124,7 @@
           @mousedown.stop.prevent
           @click.native.stop.prevent="handleAction('preview')"
         >
-          <XPEIcon type="preview" title="预览"></XPEIcon>
+          <XUIIcon type="preview" title="预览"></XUIIcon>
         </XUIButton>
       </div>
     </div>
@@ -137,7 +137,7 @@
 <script>
 import XPEHandler from '@/global/components/Handler.vue'
 import XPEAddProjectModal from './components/AddProjectModal.vue'
-import XPETabList from './components/TabList.vue'
+import XUITabList from './components/TabList.vue'
 
 import defConfig from '@/config'
 import utils from '@/global/utils'
@@ -147,7 +147,7 @@ export default {
   components: {
     XPEHandler,
     XPEAddProjectModal,
-    XPETabList
+    XUITabList
   },
   props: {
     config: {

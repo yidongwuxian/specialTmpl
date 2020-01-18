@@ -83,12 +83,8 @@
       </div>
     </div>
     <div class="block_body">
-      <!-- loading 动画 -->
-      <div class="loading" v-show="loading">
-        <XUISpin size="large" fix></XUISpin>
-      </div>
       <XUICollapse v-model="activePanel" class="options-collapse">
-        <XUIPanel name="propsMap" v-show="Object.keys(nodeInfo).length && Object.keys(propsMap).length">
+        <XUICollapseItem name="propsMap" v-show="Object.keys(nodeInfo).length && Object.keys(propsMap).length">
           props
           <XUIForm
             class="options-body"
@@ -100,6 +96,7 @@
             :label-width="80"
             @keydown.native.enter.prevent
             @click.stop.prevent
+            v-loading="loading"
           >
             <XUIFormItem
               class="options-item"
@@ -132,8 +129,8 @@
               </XUIInput>
             </XUIFormItem>
           </XUIForm>
-        </XUIPanel>
-        <XUIPanel name="slotsMap" v-show="Object.keys(nodeInfo).length && Object.keys(slotsMap).length">
+        </XUICollapseItem>
+        <XUICollapseItem name="slotsMap" v-show="Object.keys(nodeInfo).length && Object.keys(slotsMap).length">
           slots
           <XUIForm
             class="options-body"
@@ -150,8 +147,8 @@
               <XUIInput type="text" v-model="slotsMap[key]"></XUIInput>
             </XUIFormItem>
           </XUIForm>
-        </XUIPanel>
-        <XUIPanel name="innerHTML">
+        </XUICollapseItem>
+        <XUICollapseItem name="innerHTML">
           innerHTML
           <XUIForm
             class="options-body"
@@ -164,8 +161,8 @@
               <XUIInput type="text" v-model="innerHTML"></XUIInput>
             </XUIFormItem>
           </XUIForm>
-        </XUIPanel>
-        <XUIPanel name="style">
+        </XUICollapseItem>
+        <XUICollapseItem name="style">
           style
           <div class="options-body" slot="content" v-if="Object.keys(nodeInfo).length">
             <XUIForm
@@ -184,7 +181,7 @@
               </XUIFormItem>
             </XUIForm>
           </div>
-        </XUIPanel>
+        </XUICollapseItem>
       </XUICollapse>
     </div>
     <XPEHandler class="handler" mode="vertical" position="left" :expand="isExpand" :callback="toggleHandler"></XPEHandler>
