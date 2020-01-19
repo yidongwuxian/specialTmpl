@@ -13,14 +13,12 @@
 <template>
   <XUIDialog
     class="xpe_nest-notice-modal"
-    :value="isShow"
+    :visible.sync="isShow"
     title="提示"
-    :transfer="false"
-    @on-cancel="handleCancel"
   >
     <div class="content">该节点不支持嵌套！</div>
     <div slot="footer">
-      <Button type="text" size="large" @click="handleCancel">关闭</Button>
+      <XUIButton type="text" size="large" @click="handleCancel">关闭</XUIButton>
     </div>
   </XUIDialog>
 </template>

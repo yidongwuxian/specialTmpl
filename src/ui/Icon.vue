@@ -23,7 +23,7 @@ export default {
   data () {
     return {
       className: {
-        main: 'iconfont',
+        //main: 'iconfont',
         prefix: 'el-icon-'
       }
     }
@@ -32,7 +32,7 @@ export default {
     classNameList: function () {
       let _t = this
       let classNameByType = _t.type ? _t.className.prefix + _t.type : ''
-      return [_t.className.main, classNameByType]
+      return [classNameByType]
     }
   }
 }

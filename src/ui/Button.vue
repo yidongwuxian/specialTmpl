@@ -1,7 +1,6 @@
 /**
-* Created by OXOYO on 2018/3/29.
 *
-* 按钮组件 【暂弃】
+* 按钮组件
 */
 
 <style scoped lang="less" rel="stylesheet/less">
@@ -135,7 +134,6 @@
 </template>
 
 <script>
-// FIXME 【暂弃】改用iview提供的UI组件
 export default {
   name: 'XPEButton',
   props: {

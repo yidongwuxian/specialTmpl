@@ -1,5 +1,4 @@
 /**
-* Created by OXOYO on 2018/4/8.
 *
 * Tab 页签组件
 */
@@ -76,18 +75,15 @@
     </div>
     <XUIDialog
       class="xpe_add-project-modal"
-      :value="isShow"
+      :visible.sync="isShow"
       title="提示"
-      :transfer="false"
-      @on-ok="handleOK"
-      @on-cancel="handleCancel"
     >
       <div class="content">
         删除项目会清空该项目的所有数据，确认删除项目吗？
       </div>
       <div slot="footer">
-        <Button type="text" size="large" @click="handleCancel">取消</Button>
-        <Button type="primary" size="large" @click="handleOK">确定</Button>
+        <XUIButton type="primary" size="large" @click="handleOK">确定</XUIButton>
+        <XUIButton type="text" size="large" @click="handleCancel">取消</XUIButton>
       </div>
     </XUIDialog>
   </div>

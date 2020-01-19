@@ -291,7 +291,7 @@ export default {
     let _t = this
     _t.boardWidth = _t.$el.offsetWidth
     _t.boardHeight = _t.$el.offsetHeight
-    console.log('boardWidth', _t.$el.offsetWidth, _t.$el.offsetHeight)
+    //console.log('boardWidth', _t.$el.offsetWidth, _t.$el.offsetHeight)
   }
 }
 </script>

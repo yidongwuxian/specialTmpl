@@ -1,5 +1,4 @@
 /**
-* Created by OXOYO on 2018/3/21.
 *
 * 配置组件
 */
@@ -10,8 +9,6 @@
     top: 0;
     right: 0;
     bottom: 0;
-    /*width: 400px;*/
-    /*margin-right: -400px;*/
     padding-top: 50px;
     border-left: 1px solid #dddddd;
     display: inline-block;
@@ -59,8 +56,6 @@
       .options-collapse {
         border: none;
         border-radius: 0;
-        /*border-left-color: transparent;*/
-        /*border-right-color: transparent;*/
       }
 
       .loading {
@@ -88,12 +83,11 @@
           props
           <XUIForm
             class="options-body"
-            slot="content"
             v-if="Object.keys(nodeInfo).length"
             ref="propsMapForm"
             :model="propsMap"
             :rules="propsMapRules"
-            :label-width="80"
+            label-width="80"
             @keydown.native.enter.prevent
             @click.stop.prevent
             v-loading="loading"
@@ -134,7 +128,6 @@
           slots
           <XUIForm
             class="options-body"
-            slot="content"
             v-if="Object.keys(nodeInfo).length"
             @keydown.native.enter.prevent
             @click.stop.prevent
@@ -152,7 +145,6 @@
           innerHTML
           <XUIForm
             class="options-body"
-            slot="content"
             v-if="Object.keys(nodeInfo).length"
             @keydown.native.enter.prevent
             @click.stop.prevent
@@ -174,7 +166,6 @@
                   v-model="style"
                   type="textarea"
                   :rows="4"
-                  :autosize="true"
                   placeholder="请输入样式！"
                 >
                 </XUIInput>
@@ -359,9 +350,10 @@ export default {
       _t.loading = true
       _t.nodeInfo = nodeInfo
       // TODO 动态解析组件 props、slot 等
-      console.log('compileComponent', nodeInfo)
+      //console.log('compileComponent', nodeInfo)
       // 读取组件
-      let constructor = Vue.component(nodeInfo.component.name)
+      let constructor = Vue.component('XUI' + nodeInfo.component.name)
+      console.log(`constructor:${constructor }`);
       // 实例化
       let vm = new constructor()
       _t.vm = vm
@@ -439,6 +431,8 @@ export default {
   },
   created: function () {
     let _t = this
+
+    
     // 监听事件
     utils.bus.$on('XPE/expand/toggle/all', function (val) {
       _t.toggleHandler(val)
@@ -446,6 +440,7 @@ export default {
     utils.bus.$on('XPE/project/component/trigger', function (nodeInfo) {
       // 动态解析组件 props、slot 等
       _t.compileComponent(nodeInfo)
+      console.log(`newNodeInfo:${nodeInfo}`);
     })
     utils.bus.$on('XPE/canvas/clear', function (projectID) {
       _t.clearOptions(projectID)

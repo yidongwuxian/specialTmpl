@@ -106,25 +106,7 @@
           @mousedown.stop.prevent
           @click.native.stop.prevent="handleAction('addProject')"
         >
-          <XUIIcon type="add-circle" title="新建项目"></XUIIcon>
-        </XUIButton>
-        <XUIButton
-          type="text"
-          class="btn-item"
-          @contextmenu.stop.prevent
-          @mousedown.stop.prevent
-          @click.native.stop.prevent="handleAction('ui')"
-        >
-          <XUIIcon type="ui" title="UI"></XUIIcon>
-        </XUIButton>
-        <XUIButton
-          type="text"
-          class="btn-item"
-          @contextmenu.stop.prevent
-          @mousedown.stop.prevent
-          @click.native.stop.prevent="handleAction('preview')"
-        >
-          <XUIIcon type="preview" title="预览"></XUIIcon>
+          <XUIIcon :type="createIconName" title="新建项目"></XUIIcon>
         </XUIButton>
       </div>
     </div>
@@ -138,6 +120,7 @@
 import XPEHandler from '@/global/components/Handler.vue'
 import XPEAddProjectModal from './components/AddProjectModal.vue'
 import XUITabList from './components/TabList.vue'
+import XUIIcon    from '@/ui/Icon.vue'
 
 import defConfig from '@/config'
 import utils from '@/global/utils'
@@ -147,7 +130,8 @@ export default {
   components: {
     XPEHandler,
     XPEAddProjectModal,
-    XUITabList
+    XUITabList,
+    XUIIcon
   },
   props: {
     config: {
@@ -162,7 +146,9 @@ export default {
       // 是否展开
       isExpand: true,
       // tab列表数据
-      tabList: []
+      tabList: [],
+      // 图标名称
+      createIconName: "circle-plus-outline"
     }
   },
   methods: {

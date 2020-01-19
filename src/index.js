@@ -18,7 +18,10 @@ import {
   Message,
   Backtop,
   Collapse,
-  CollapseItem
+  CollapseItem,
+  Form,
+  FormItem,
+  Switch
 } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/zh-CN' // lang i18n
@@ -56,6 +59,10 @@ XPE.install = function (Vue) {
   Vue.component(prefix + 'Backtop', Backtop)
   Vue.component(prefix + 'Collapse', Collapse)
   Vue.component(prefix + 'CollapseItem', CollapseItem)
+  Vue.component(prefix + 'Form', Form)
+  Vue.component(prefix + 'FormItem', FormItem)
+  Vue.component(prefix + 'Switch', Switch)
+  
   // 注册XPageEditor
   Vue.component('XPageEditor', XPageEditor)
   // 注册VueAwesomeSwiper

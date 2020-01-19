@@ -223,12 +223,12 @@ export default {
   },
   watch: {
     width: function (val) {
-      console.log('width', val)
+      //console.log('width', val)
       let _t = this
       _t.computeScaleList('x', val)
     },
     height: function (val) {
-      console.log('height', val)
+      //console.log('height', val)
       let _t = this
       _t.computeScaleList('y', val)
     }

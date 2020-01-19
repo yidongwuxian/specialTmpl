@@ -1,5 +1,4 @@
 /**
-* Created by OXOYO on 2018/4/3.
 *
 * 新建项目弹窗
 */
@@ -13,17 +12,14 @@
 <template>
   <XUIDialog
     class="xpe_add-project-modal"
-    :value="isShow"
+    :visible.sync="isShow"
     title="新建项目"
-    :transfer="false"
-    @on-ok="handleOK"
-    @on-cancel="handleCancel"
   >
     <XUIForm
       ref="addProjectForm"
       :model="formData"
       :rules="formRules"
-      :label-width="120"
+      label-width="120"
       @keydown.native.enter.prevent
     >
       <XUIFormItem label="项目名称：" prop="name">
@@ -52,8 +48,8 @@
       </XUIFormItem>
     </XUIForm>
     <div slot="footer">
-      <Button type="text" size="large" @click="handleCancel">取消</Button>
-      <Button type="primary" size="large" @click="handleOK">确定</Button>
+      <XUIButton type="primary" size="large" @click="handleOK">确定</XUIButton>
+      <XUIButton type="text" size="large" @click="handleCancel">取消</XUIButton>
     </div>
   </XUIDialog>
 </template>

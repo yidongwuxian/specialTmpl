@@ -16,8 +16,8 @@
                  @dialogEventCancel="dialogCancelForm">
     </base-dialog>
     <div class="dialog-btns">
-      <button class="dialog-btn dialog-save" @click="saveFn">保存</button>
-      <button class="dialog-btn dialog-cancel" @click="cancelFn">取消</button>
+      <XUIButton class="dialog-btn dialog-save" @click="saveFn">保存</XUIButton>
+      <XUIButton class="dialog-btn dialog-cancel" @click="cancelFn">取消</XUIButton>
     </div>
   </div>
 </template>

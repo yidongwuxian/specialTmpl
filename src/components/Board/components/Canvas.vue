@@ -419,7 +419,6 @@ export default {
       let _t = this
       // 更新当前操作的节点
       _t.currentNode = nodeInfo.id
-      // console.log('handleComponentTrigger', nodeInfo.component.name)
       // 广播事件，更新当前激活组件
       utils.bus.$emit('XPE/project/component/trigger', nodeInfo)
       _t.$nextTick(function () {
@@ -469,7 +468,6 @@ export default {
         left: offsetX + 'px',
         top: offsetY + 'px'
       }
-      // console.log('style', style)
       nodeInfo.style = {
         ...nodeInfo.style,
         ...style
@@ -500,7 +498,9 @@ export default {
     },
     handleDropOnNode: function (parentNode, event) {
       let _t = this
-      console.log('handleDropOnNode')
+      //console.log('handleDropOnNode')
+      console.log(`parentNode:${JSON.stringify(parentNode)}`)
+      console.log(`event:${JSON.stringify(event)}`)
       let canvasMap = _t.canvasMap
       // 获取节点数据
       let nodeInfo = JSON.parse(event.dataTransfer.getData('node'))

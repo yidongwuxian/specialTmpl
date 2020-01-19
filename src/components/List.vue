@@ -1,5 +1,4 @@
 /**
-* Created by OXOYO on 2018/3/21.
 *
 * 元素列表组件
 */
@@ -10,8 +9,6 @@
     top: 0px;
     bottom: 0;
     left: 0;
-    /*width: 400px;*/
-    /*margin-left: -400px;*/
     padding-top: 50px;
     border-right: 1px solid #dddddd;
     display: inline-block;
@@ -74,15 +71,6 @@
       </div>
     </div>
     <div class="block_body">
-      <!--
-      <div
-        class="list_item"
-        v-for="(value, key) in config.data"
-        :key="key"
-      >
-        {{ key }}
-      </div>
-      -->
       <slot></slot>
     </div>
     <XPEHandler class="handler" mode="vertical" position="right" :expand="isExpand" :callback="toggleHandler"></XPEHandler>

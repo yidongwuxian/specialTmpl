@@ -1,8 +1,3 @@
-/**
-* Created by OXOYO on 2018/3/26.
-*
-*/
-
 <style scoped lang="less" rel="stylesheet/less">
   .x-ui-input {
     display: inline-block;

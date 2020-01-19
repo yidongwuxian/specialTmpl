@@ -1,7 +1,6 @@
 /**
-* Created by OXOYO on 2018/4/3.
 *
-* 弹窗组件 【暂弃】
+* 弹窗组件
 */
 
 <style scoped lang="less" rel="stylesheet/less">
@@ -10,7 +9,6 @@
     z-index: 9999;
     top: 20%;
     left: 50%;
-    /*border: 1px solid #dddddd;*/
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3);
     text-align: left;
     transition: all .5s ease-in .1s;
@@ -62,7 +60,6 @@
 </template>
 
 <script>
-// FIXME 【暂弃】改用iview提供的UI组件
 import XPEButton from './Button.vue'
 
 export default {
