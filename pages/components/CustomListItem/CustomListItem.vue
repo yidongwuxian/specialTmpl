@@ -1,13 +1,11 @@
 /**
-* Created by OXOYO on 2018/4/3.
 *
 * 自定义列表元素组件
 */
 
-<style scoped lang="less" rel="stylesheet/less">
+<style scoped lang="scss">
   .navigate{
     font-size: 14px;
-
     .menu-block {
       width: 100% !important;
       text-align: left;
@@ -25,7 +23,6 @@
       }
 
       .menu-group {
-
         .menu-group-header {
           height: 48px;
           line-height: 48px;
@@ -34,7 +31,6 @@
           color: #999;
         }
         .menu-group-body {
-
           .menu-item {
             overflow: hidden;
             text-overflow: ellipsis;
@@ -43,7 +39,6 @@
             position: relative;
             cursor: pointer;
             transition: all .2s ease-in-out;
-
             &:hover {
               background: #f3f3f3;
             }

@@ -3,7 +3,7 @@
 * Tab 页签组件
 */
 
-<style scoped lang="less" rel="stylesheet/less">
+<style scoped lang="scss">
   .xpe_tab_list {
     display: inline-block;
     position: relative;

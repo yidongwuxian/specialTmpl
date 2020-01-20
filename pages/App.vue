@@ -1,10 +1,9 @@
 /**
-* Created by OXOYO on 2018/3/21.
 *
 * example 根组件
 */
 
-<style scoped lang="less" rel="stylesheet/less">
+<style scoped lang="scss">
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

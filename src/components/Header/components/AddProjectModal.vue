@@ -3,9 +3,12 @@
 * 新建项目弹窗
 */
 
-<style lang="less" rel="stylesheet/less">
+<style lang="scss">
   .xpe_add-project-modal {
     text-align: left;
+  }
+  /deep/ .el-dialog{
+     width: 520px;
   }
 </style>
 
@@ -72,10 +75,10 @@ export default {
       },
       // 表单校验规则
       formRules: {
-        name: {
-          required: true,
-          trigger: 'change'
-        }
+        name: [
+          { required: true, message: '请输入项目名称', trigger: 'blur' },
+          { required: true, message: '请输入项目名称', trigger: 'change' }
+        ]
       },
       // 模式列表
       typeMap: {
@@ -125,7 +128,9 @@ export default {
       _t.$refs['addProjectForm'].validate((valid) => {
         validResult = valid
         if (!valid) {
-          _t.$Message.error('表单验证失败！')
+          console.log('表单验证失败!');
+          return false;
+          //_t.$message.error('表单验证失败！')
         }
       })
       console.log('validResult', validResult)

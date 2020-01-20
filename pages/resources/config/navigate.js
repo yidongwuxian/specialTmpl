@@ -1,16 +1,11 @@
 // 定义左侧导航
-
+const prefix = 'XUI';
 const list = {
   components: [
     {
       type: 'Basic',
       title: '基础',
       children: [
-        // {
-        //   title: 'XPageEditor',
-        //   name: 'XPageEditor',
-        //   icon: 'edit'
-        // },
         {
           title: 'Grid 栅格 Row',
           name: 'Row',
@@ -83,7 +78,7 @@ const list = {
       children: [
         {
           title: 'Input 输入框',
-          name: 'Input',
+          name: prefix + 'Input',
           icon: 'ios-compose-outline',
           nest: {
             enable: false,
@@ -339,7 +334,7 @@ const list = {
         },
         {
           title: 'InputNumber 数字输入框',
-          name: 'InputNumber',
+          name: prefix + 'InputNumber',
           icon: 'ios-calculator',
           nest: {
             enable: false,
@@ -680,8 +675,8 @@ const list = {
           }
         },
         {
-          title: 'Carousel 走马灯',
-          name: 'Carousel',
+          title: 'VueAwesomeSwiper 走马灯',
+          name: prefix + 'VueAwesomeSwiper',
           icon: 'ios-film-outline',
           nest: {
             enable: true,

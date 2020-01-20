@@ -1,10 +1,9 @@
 /**
-* Created by OXOYO on 2018/4/18.
 *
 * 嵌套提示弹窗
 */
 
-<style scoped lang="less" rel="stylesheet/less">
+<style scoped lang="scss">
   .xpe_nest-notice-modal {
 
   }

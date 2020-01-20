@@ -77,7 +77,7 @@
     }
   };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import '../../styles/reset.scss';
 @import '../../styles/page.scss';
 .base-info-dialog{

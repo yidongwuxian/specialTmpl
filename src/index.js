@@ -21,7 +21,10 @@ import {
   CollapseItem,
   Form,
   FormItem,
-  Switch
+  Switch,
+  Checkbox,
+  CheckboxButton,
+  CheckboxGroup
 } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/zh-CN' // lang i18n
@@ -62,7 +65,9 @@ XPE.install = function (Vue) {
   Vue.component(prefix + 'Form', Form)
   Vue.component(prefix + 'FormItem', FormItem)
   Vue.component(prefix + 'Switch', Switch)
-  
+  Vue.component(prefix + 'Checkbox', Checkbox)
+  Vue.component(prefix + 'CheckboxButton', CheckboxButton)
+  Vue.component(prefix + 'CheckboxGroup', CheckboxGroup)
   // 注册XPageEditor
   Vue.component('XPageEditor', XPageEditor)
   // 注册VueAwesomeSwiper

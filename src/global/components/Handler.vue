@@ -1,9 +1,8 @@
 /**
-* Created by OXOYO on 2018/3/26.
 *
 */
 
-<style scoped lang="less" rel="stylesheet/less">
+<style scoped lang="scss">
   .xpe_handler {
     display: inline-block;
     position: absolute;

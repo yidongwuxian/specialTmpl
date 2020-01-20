@@ -1,10 +1,9 @@
 /**
-* Created by OXOYO on 2018/3/28.
 *
 * 右键菜单元素
 */
 
-<style scoped lang="less" rel="stylesheet/less">
+<style scoped lang="scss">
 </style>
 
 <template>
@@ -24,7 +23,7 @@
     </XUIIcon>
     <i
       v-if="info.icon && info.icon.category === 'iconfont'"
-      :class="['context-menu-icon', 'iconfont', info.icon.type]"
+      :class="[info.icon.type]"
       :style="info.icon.style"
       :title="info.text"
     >

@@ -1,10 +1,9 @@
 /**
-* Created by OXOYO on 2018/3/27.
 *
 * 画板工具栏
 */
 
-<style scoped lang="less" rel="stylesheet/less">
+<style scoped lang="scss">
   .xpe_tool-bar {
     display: inline-block;
     position: absolute;
@@ -14,17 +13,11 @@
     overflow: hidden;
     transition: all .5s ease-in .1s;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
-
     .bar-list {
       display: inline-block;
-
       .bar-item {
         position: relative;
-        /*width: 40px;*/
-        /*height: 40px;*/
-        /*line-height: 40px;*/
         padding: 5px;
-
         +.bar-item {
           &:before {
             content: ' ';
@@ -38,15 +31,12 @@
             display: inline-block;
           }
         }
-
         .iconfont {
           width: 20px;
           height: 20px;
           line-height: 20px;
-          /*padding: 5px;*/
           display: inline-block;
           color: #333333;
-
           &:hover {
             color: #2d8cf0;
           }
@@ -114,7 +104,7 @@ export default {
         {
           name: 'expand',
           text: '展开',
-          icon: 'expand',
+          icon: 'el-icon-s-help',
           category: 'expand',
           enable: true,
           action: {
@@ -130,7 +120,7 @@ export default {
         {
           name: 'fold',
           text: '折叠',
-          icon: 'fold',
+          icon: 'el-icon-help',
           category: 'expand',
           enable: true,
           action: {
@@ -146,7 +136,7 @@ export default {
         {
           name: 'zoom-in',
           text: '放大',
-          icon: 'zoom-in',
+          icon: 'el-icon-zoom-in',
           category: 'zoom',
           enable: true,
           action: {
@@ -167,14 +157,14 @@ export default {
         {
           name: 'zoom-reset',
           text: '还原',
-          icon: 'zoom',
+          icon: 'el-icon-search',
           category: 'zoom',
           enable: true,
           action: {
             type: 'bus',
             handler: 'XPE/canvas/zoom',
             params: {
-              type: 'zoom-reset',
+              type: 'search',
               callback: (content) => {
                 _t.handleToolTipContent('zoom', content)
               }

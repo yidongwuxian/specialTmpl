@@ -1,19 +1,16 @@
 /**
-* Created by OXOYO on 2018/3/28.
 *
 * 刻度尺
 */
 
-<style scoped lang="less" rel="stylesheet/less">
+<style scoped lang="scss">
   .xpe_scale {
     display: inline-block;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 2500;
-    /*overflow: hidden;*/
     transition: all .5s ease-in .1s;
-
     .scale_x {
       position: absolute;
       left: 0;
@@ -21,7 +18,6 @@
       width: 100%;
       height: 18px;
       background: url('../../../assets/scale_x.png') repeat-x;
-
       .scale_item {
         top: 1px;
       }
@@ -33,7 +29,6 @@
       width: 18px;
       height: 100%;
       background: url('../../../assets/scale_y.png') repeat-y;
-
       .scale_item {
         width: 8px;
         left: 3px;

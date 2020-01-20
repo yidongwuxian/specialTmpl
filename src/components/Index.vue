@@ -3,7 +3,7 @@
 * 表单编辑器根容器
 */
 
-<style scoped lang="less" rel="stylesheet/less">
+<style scoped lang="scss">
   article, aside, blockquote, body, button, dd, details, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, input, legend, li, menu, nav, ol, p, section, td, textarea, th, ul {
     margin: 0;
     padding: 0;

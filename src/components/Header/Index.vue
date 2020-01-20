@@ -1,10 +1,9 @@
 /**
-* Created by OXOYO on 2018/3/22.
 *
 * 头部组件
 */
 
-<style scoped lang="less" rel="stylesheet/less">
+<style scoped lang="scss">
   .xpe_header {
     position: absolute;
     top: 0;

@@ -1,4 +1,4 @@
-<style scoped lang="less" rel="stylesheet/less">
+<style scoped lang="scss">
   .x-ui-input {
     display: inline-block;
     width: 100%;

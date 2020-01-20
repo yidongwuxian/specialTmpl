@@ -1,10 +1,9 @@
 /**
-* Created by OXOYO on 2018/3/28.
 *
 * 右键菜单
 */
 
-<style lang="less" rel="stylesheet/less">
+<style lang="scss">
   .xpe-context-menu {
     position: absolute;
     min-width: 120px;

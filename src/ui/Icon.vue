@@ -3,7 +3,7 @@
 * 图标组件
 */
 
-<style scoped lang="less" rel="stylesheet/less">
+<style scoped lang="scss">
 
 </style>
 

@@ -3,7 +3,7 @@
 * 配置组件
 */
 
-<style scoped lang="less" rel="stylesheet/less">
+<style scoped lang="scss">
   .xpe_options {
     position: absolute;
     top: 0;
@@ -79,8 +79,7 @@
     </div>
     <div class="block_body">
       <XUICollapse v-model="activePanel" class="options-collapse">
-        <XUICollapseItem name="propsMap" v-show="Object.keys(nodeInfo).length && Object.keys(propsMap).length">
-          props
+        <XUICollapseItem title="props" name="propsMap" v-show="Object.keys(nodeInfo).length && Object.keys(propsMap).length">
           <XUIForm
             class="options-body"
             v-if="Object.keys(nodeInfo).length"
@@ -124,8 +123,7 @@
             </XUIFormItem>
           </XUIForm>
         </XUICollapseItem>
-        <XUICollapseItem name="slotsMap" v-show="Object.keys(nodeInfo).length && Object.keys(slotsMap).length">
-          slots
+        <XUICollapseItem title="slots" name="slotsMap" v-show="Object.keys(nodeInfo).length && Object.keys(slotsMap).length">
           <XUIForm
             class="options-body"
             v-if="Object.keys(nodeInfo).length"
@@ -141,8 +139,7 @@
             </XUIFormItem>
           </XUIForm>
         </XUICollapseItem>
-        <XUICollapseItem name="innerHTML">
-          innerHTML
+        <XUICollapseItem title="innerHTML" name="innerHTML">
           <XUIForm
             class="options-body"
             v-if="Object.keys(nodeInfo).length"
@@ -154,9 +151,8 @@
             </XUIFormItem>
           </XUIForm>
         </XUICollapseItem>
-        <XUICollapseItem name="style">
-          style
-          <div class="options-body" slot="content" v-if="Object.keys(nodeInfo).length">
+        <XUICollapseItem title="style" name="style">
+          <div class="options-body" v-if="Object.keys(nodeInfo).length">
             <XUIForm
               class="options-body"
               @click.stop.prevent
@@ -352,7 +348,7 @@ export default {
       // TODO 动态解析组件 props、slot 等
       //console.log('compileComponent', nodeInfo)
       // 读取组件
-      let constructor = Vue.component('XUI' + nodeInfo.component.name)
+      let constructor = Vue.component(nodeInfo.component.name)
       console.log(`constructor:${constructor }`);
       // 实例化
       let vm = new constructor()

@@ -3,7 +3,7 @@
 * 弹窗组件
 */
 
-<style scoped lang="less" rel="stylesheet/less">
+<style scoped lang="scss">
   .xpe_modal {
     position: absolute;
     z-index: 9999;

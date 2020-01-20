@@ -3,7 +3,7 @@
 * 按钮组件
 */
 
-<style scoped lang="less" rel="stylesheet/less">
+<style scoped lang="scss">
   .xpe_button {
     display: inline-block;
     margin-bottom: 0;

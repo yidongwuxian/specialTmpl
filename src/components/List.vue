@@ -3,7 +3,7 @@
 * 元素列表组件
 */
 
-<style scoped lang="less" rel="stylesheet/less">
+<style scoped lang="scss">
   .xpe_list {
     position: absolute;
     top: 0px;

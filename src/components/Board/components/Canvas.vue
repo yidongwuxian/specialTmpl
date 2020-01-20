@@ -1,10 +1,9 @@
 /**
-* Created by OXOYO on 2018/4/8.
 *
 * 画布组件
 */
 
-<style  lang="less" rel="stylesheet/less">
+<style  lang="scss">
   .xpe_canvas {
     display: inline-block;
     position: absolute;
@@ -181,7 +180,7 @@ export default {
           {
             name: 'expand',
             icon: {
-              type: 'icon-expand',
+              type: 'el-icon-s-help',
               style: '',
               category: 'iconfont'
             },
@@ -196,7 +195,7 @@ export default {
           {
             name: 'fold',
             icon: {
-              type: 'icon-fold',
+              type: 'el-icon-help',
               style: '',
               category: 'iconfont'
             },
@@ -451,6 +450,7 @@ export default {
       console.log('handleDropOnCanvas')
       let canvasMap = _t.canvasMap
       // 获取节点数据
+      console.log(`nodejson:${event.dataTransfer.getData('node')}`);
       let nodeInfo = JSON.parse(event.dataTransfer.getData('node'))
       nodeInfo = {
         id: '',
