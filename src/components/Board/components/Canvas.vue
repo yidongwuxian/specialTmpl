@@ -450,7 +450,7 @@ export default {
       console.log('handleDropOnCanvas')
       let canvasMap = _t.canvasMap
       // 获取节点数据
-      console.log(`nodejson:${event.dataTransfer.getData('node')}`);
+      console.log(`nodejson:${JSON.stringify(canvasMap) }`);
       let nodeInfo = JSON.parse(event.dataTransfer.getData('node'))
       nodeInfo = {
         id: '',

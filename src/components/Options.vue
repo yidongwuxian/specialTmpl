@@ -436,7 +436,7 @@ export default {
     utils.bus.$on('XPE/project/component/trigger', function (nodeInfo) {
       // 动态解析组件 props、slot 等
       _t.compileComponent(nodeInfo)
-      console.log(`newNodeInfo:${nodeInfo}`);
+      console.log(`newNodeInfo:${JSON.stringify(nodeInfo)}`);
     })
     utils.bus.$on('XPE/canvas/clear', function (projectID) {
       _t.clearOptions(projectID)

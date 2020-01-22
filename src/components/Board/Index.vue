@@ -160,9 +160,9 @@ export default {
         target: 'XPE_board',
         list: [
           {
-            name: 'expand',
+            name: 'help',
             icon: {
-              type: 'icon-expand',
+              type: 'el-icon-help',
               style: '',
               category: 'iconfont'
             },
@@ -175,9 +175,9 @@ export default {
             }
           },
           {
-            name: 'fold',
+            name: 's-help',
             icon: {
-              type: 'icon-fold',
+              type: 'el-icon-s-help',
               style: '',
               category: 'iconfont'
             },

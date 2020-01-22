@@ -483,22 +483,6 @@ const list = {
           }
         },
         {
-          title: 'Notice 通知提醒',
-          name: 'Notice',
-          icon: 'ios-bell-outline',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
           title: 'Modal 对话框',
           name: 'Modal',
           icon: 'ios-chatbubble-outline',
@@ -547,22 +531,6 @@ const list = {
           }
         },
         {
-          title: 'Badge 徽标数',
-          name: 'Badge',
-          icon: 'email-unread',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
           title: 'Collapse 折叠面板',
           name: 'Collapse',
           icon: 'ios-albums-outline',
@@ -595,9 +563,9 @@ const list = {
           }
         },
         {
-          title: 'Timeline 时间轴',
-          name: 'Timeline',
-          icon: 'android-more-vertical',
+          title: 'Carousel 走马灯',
+          name: prefix + 'Carousel',
+          icon: 'ios-film-outline',
           nest: {
             enable: true,
             parent: {
@@ -611,72 +579,8 @@ const list = {
           }
         },
         {
-          title: 'TimelineItem 时间轴项',
-          name: 'TimelineItem',
-          icon: 'android-more-vertical',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
-          title: 'Tag 标签',
-          name: 'Tag',
-          icon: 'ios-pricetags-outline',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
-          title: 'Tooltip 文字提示',
-          name: 'Tooltip',
-          icon: 'chatbox-working',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
-          title: 'Poptip 气泡提示',
-          name: 'Poptip',
-          icon: 'chatbubble-working',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
-          title: 'VueAwesomeSwiper 走马灯',
-          name: prefix + 'VueAwesomeSwiper',
+          title: 'SwiperBox 轮播图',
+          name: 'SwiperBox',
           icon: 'ios-film-outline',
           nest: {
             enable: true,

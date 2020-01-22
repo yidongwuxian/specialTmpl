@@ -29,8 +29,7 @@ import {
 import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/zh-CN' // lang i18n
 import XPageEditor from './components/Index.vue'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
-import '../node_modules/swiper/dist/css/swiper.css'
+import SwiperBox from '../pages/resources/components/SwiperBox.vue'
 
 const XPE = {}
 const prefix = 'XUI'
@@ -68,10 +67,10 @@ XPE.install = function (Vue) {
   Vue.component(prefix + 'Checkbox', Checkbox)
   Vue.component(prefix + 'CheckboxButton', CheckboxButton)
   Vue.component(prefix + 'CheckboxGroup', CheckboxGroup)
+  // 注册SwiperBox
+  Vue.component('SwiperBox', SwiperBox)
   // 注册XPageEditor
   Vue.component('XPageEditor', XPageEditor)
-  // 注册VueAwesomeSwiper
-  Vue.component(prefix + 'VueAwesomeSwiper', VueAwesomeSwiper)
   XPE.installed = true
 }
 
