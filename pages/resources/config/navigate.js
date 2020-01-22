@@ -237,89 +237,9 @@ const list = {
           }
         },
         {
-          title: 'AutoComplete 自动完成',
-          name: 'AutoComplete',
-          icon: 'ios-list-outline',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
           title: 'Slider 滑块',
           name: 'Slider',
           icon: 'minus-round',
-          nest: {
-            enable: false,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
-          title: 'DatePicker 日期选择器',
-          name: 'DatePicker',
-          icon: 'ios-calendar-outline',
-          nest: {
-            enable: false,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
-          title: 'TimePicker 时间选择器',
-          name: 'TimePicker',
-          icon: 'ios-clock-outline',
-          nest: {
-            enable: false,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
-          title: 'Cascader 级联选择',
-          name: 'Cascader',
-          icon: 'ios-more-outline',
-          nest: {
-            enable: false,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
-          title: 'Transfer 穿梭框',
-          name: 'Transfer',
-          icon: 'ios-pause-outline',
           nest: {
             enable: false,
             parent: {
@@ -338,22 +258,6 @@ const list = {
           icon: 'ios-calculator',
           nest: {
             enable: false,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
-          title: 'Rate 评分',
-          name: 'Rate',
-          icon: 'ios-star',
-          nest: {
-            enable: true,
             parent: {
               allow: [],
               deny: []
@@ -617,38 +521,6 @@ const list = {
       title: '导航',
       children: [
         {
-          title: 'Menu 导航菜单',
-          name: 'Menu',
-          icon: 'navicon-round',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
-          title: 'Submenu 子菜单',
-          name: 'Submenu',
-          icon: 'navicon-round',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
           title: 'Tabs 标签页',
           name: 'Tabs',
           icon: 'social-windows-outline',
@@ -729,111 +601,9 @@ const list = {
           }
         },
         {
-          title: 'Page 分页',
-          name: 'Page',
-          icon: 'ios-book-outline',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
-          title: 'Breadcrumb 面包屑',
-          name: 'Breadcrumb',
-          icon: 'ios-arrow-right',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
-          title: 'BreadcrumbItem 面包屑项',
-          name: 'BreadcrumbItem',
-          icon: 'ios-arrow-right',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
-          title: 'Steps 步骤条',
-          name: 'Steps',
-          icon: 'ios-checkmark-outline',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
-          title: 'Step 步骤条项',
-          name: 'Step',
-          icon: 'ios-checkmark-outline',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
           title: 'LoadingBar 加载进度条',
           name: 'LoadingBar',
           icon: 'ios-minus-empty',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        }
-      ]
-    },
-    {
-      type: 'Chart',
-      title: '图表',
-      children: [
-        {
-          title: 'Circle 进度环',
-          name: 'Circle',
-          icon: 'ios-circle-outline',
           nest: {
             enable: true,
             parent: {
@@ -853,41 +623,9 @@ const list = {
       title: '其它',
       children: [
         {
-          title: 'Affix 图钉',
-          name: 'Affix',
-          icon: 'pin',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
           title: 'BackTop 返回顶部',
           name: 'BackTop',
           icon: 'ios-arrow-up',
-          nest: {
-            enable: true,
-            parent: {
-              allow: [],
-              deny: []
-            },
-            children: {
-              allow: [],
-              deny: []
-            }
-          }
-        },
-        {
-          title: 'Spin 加载中',
-          name: 'Spin',
-          icon: 'load-d',
           nest: {
             enable: true,
             parent: {
