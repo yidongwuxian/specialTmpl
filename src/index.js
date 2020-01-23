@@ -24,7 +24,9 @@ import {
   Switch,
   Checkbox,
   CheckboxButton,
-  CheckboxGroup
+  CheckboxGroup,
+  Tabs,
+  TabPane
 } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/zh-CN' // lang i18n
@@ -67,6 +69,8 @@ XPE.install = function (Vue) {
   Vue.component(prefix + 'Checkbox', Checkbox)
   Vue.component(prefix + 'CheckboxButton', CheckboxButton)
   Vue.component(prefix + 'CheckboxGroup', CheckboxGroup)
+  Vue.component(prefix + 'Tabs', Tabs)
+  Vue.component(prefix + 'TabPane', TabPane)
   // 注册SwiperBox
   Vue.component('SwiperBox', SwiperBox)
   // 注册XPageEditor

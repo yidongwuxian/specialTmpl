@@ -522,7 +522,7 @@ const list = {
       children: [
         {
           title: 'Tabs 标签页',
-          name: 'Tabs',
+          name: prefix + 'Tabs',
           icon: 'social-windows-outline',
           nest: {
             enable: true,
@@ -538,7 +538,7 @@ const list = {
         },
         {
           title: 'Tabs 标签页面板',
-          name: 'TabPane',
+          name:  prefix + 'TabPane',
           icon: 'social-windows-outline',
           nest: {
             enable: true,

@@ -12,6 +12,8 @@ import locale from 'element-ui/lib/locale/lang/zh-CN' // lang i18n
 // 导入自定义组件
 import CustomInput from './components/Input.vue'
 import SwiperBox from './components/SwiperBox.vue'
+import BaseTabs from './components/tabsBox.vue'
+
 
 // 注册ElementUI
 Vue.use(ElementUI, { locale })
@@ -25,6 +27,6 @@ Object.keys(ElementUI).map(key => {
   }
 })
 // 合并
-let componentList = Object.assign({}, {CustomInput,SwiperBox}, iviewComponentList)
+let componentList = Object.assign({}, {CustomInput,SwiperBox,BaseTabs}, iviewComponentList)
 
 export default componentList
